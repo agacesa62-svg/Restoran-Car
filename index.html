@@ -3,24 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Restoran Car | Odžaci</title>
 
 <style>
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
 font-family:Arial,sans-serif;
-background:#101010;
-color:white;
+background:#0d0d0d;
+color:#fff;
+line-height:1.6
 }
 
 header{
@@ -28,22 +22,36 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-background:rgba(10,10,10,.95);
-padding:18px 25px;
-z-index:10;
-border-bottom:1px solid #333;
+z-index:1000;
+background:rgba(10,10,10,.94);
+border-bottom:1px solid #333
+}
+
+.nav{
+max-width:1100px;
+margin:auto;
+padding:17px 22px;
+display:flex;
+justify-content:space-between;
+align-items:center
 }
 
 .logo{
-text-align:center;
-font-size:23px;
+font-size:22px;
 font-weight:bold;
-letter-spacing:3px;
+letter-spacing:3px
 }
 
-.logo span{
-color:#d4af37;
+.logo span{color:#d4af37}
+
+nav a{
+color:#fff;
+text-decoration:none;
+margin-left:18px;
+font-size:14px
 }
+
+nav a:hover{color:#d4af37}
 
 .hero{
 min-height:100vh;
@@ -51,214 +59,227 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:100px 20px 50px;
-
+padding:120px 20px 70px;
 background:
-linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
-radial-gradient(circle,#443720,#101010 70%);
+linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.88)),
+radial-gradient(circle,#4a3b20,#0d0d0d 70%)
 }
 
-.hero-content{
-max-width:800px;
-}
+.hero-content{max-width:850px}
 
 .welcome{
 color:#d4af37;
 letter-spacing:5px;
-font-size:14px;
-margin-bottom:15px;
+font-size:14px
 }
 
 h1{
-font-size:clamp(50px,12vw,100px);
+font-size:clamp(55px,12vw,105px);
 letter-spacing:5px;
+margin:10px 0
 }
 
-h1 span{
-color:#d4af37;
-}
+h1 span{color:#d4af37}
 
-.hero-text{
+.hero p{
 font-size:21px;
-color:#ddd;
-margin:20px 0;
+color:#ddd
 }
 
-.rating{
-margin:25px 0;
-font-size:18px;
-}
+.rating{margin:25px 0}
 
 .stars{
 color:#d4af37;
 font-size:25px;
+letter-spacing:3px
 }
 
 .buttons{
 display:flex;
 justify-content:center;
-gap:15px;
-flex-wrap:wrap;
+gap:14px;
+flex-wrap:wrap
 }
 
 .btn{
-padding:14px 27px;
+display:inline-block;
+padding:14px 26px;
 border-radius:30px;
 text-decoration:none;
-font-weight:bold;
-display:inline-block;
+font-weight:bold
 }
 
 .gold{
 background:#d4af37;
-color:#111;
+color:#111
 }
 
 .outline{
 border:1px solid #d4af37;
-color:#d4af37;
+color:#d4af37
 }
 
 section{
 max-width:1100px;
 margin:auto;
-padding:85px 25px;
+padding:85px 22px
 }
 
 .title{
 text-align:center;
-margin-bottom:45px;
+margin-bottom:45px
 }
 
 .title small{
 color:#d4af37;
-letter-spacing:4px;
+letter-spacing:4px
 }
 
 .title h2{
 font-size:40px;
-margin-top:8px;
+margin-top:8px
 }
 
 .about{
-text-align:center;
-max-width:750px;
+max-width:780px;
 margin:auto;
+text-align:center;
 color:#bbb;
-font-size:18px;
+font-size:18px
 }
 
 .cards{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
-margin-top:45px;
+margin-top:45px
 }
 
 .card{
-background:#191919;
+background:#181818;
 border:1px solid #303030;
 border-radius:18px;
 padding:30px 20px;
-text-align:center;
+text-align:center
 }
 
 .icon{
-font-size:40px;
-margin-bottom:15px;
+font-size:38px;
+margin-bottom:12px
 }
 
 .card h3{
-margin-bottom:10px;
 color:#d4af37;
+margin-bottom:8px
 }
 
-.card p{
-color:#aaa;
-font-size:15px;
+.card p{color:#aaa}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px
+}
+
+.gallery img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:18px;
+border:1px solid #333;
+transition:.3s
+}
+
+.gallery img:hover{
+transform:scale(1.02)
 }
 
 .menu{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:20px;
+gap:20px
 }
 
 .menu-card{
-background:#191919;
+background:#181818;
 border:1px solid #303030;
 border-radius:18px;
-padding:25px;
+padding:25px
 }
 
 .menu-card h3{
 color:#d4af37;
-font-size:21px;
-margin-bottom:8px;
+margin-bottom:8px
 }
 
-.menu-card p{
-color:#aaa;
-}
+.menu-card p{color:#aaa}
 
 .contact-section{
-background:#181818;
 max-width:none;
+background:#181818
 }
 
 .contact{
 max-width:900px;
-margin:auto;
-text-align:center;
+margin:auto
 }
 
 .contact-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:20px;
-margin-top:40px;
+gap:20px
 }
 
 .contact-box{
 background:#222;
 border-radius:18px;
 padding:25px;
+text-align:center
 }
 
 .contact-box h3{
 color:#d4af37;
-margin:10px 0;
+margin:8px 0
 }
 
-.contact-box p,
-.contact-box a{
+.contact-box a,
+.contact-box p{
 color:#ccc;
-text-decoration:none;
+text-decoration:none
 }
 
 footer{
+background:#080808;
 text-align:center;
 padding:30px;
-background:#090909;
-color:#777;
+color:#777
 }
 
 @media(max-width:700px){
 
+nav{display:none}
+
 .cards,
 .menu,
 .contact-grid{
-grid-template-columns:1fr;
+grid-template-columns:1fr
+}
+
+.gallery{
+grid-template-columns:1fr
+}
+
+.gallery img{
+height:260px
 }
 
 .hero h1{
-font-size:58px;
+font-size:58px
 }
 
 section{
-padding:70px 20px;
+padding:70px 20px
 }
-
 }
 </style>
 </head>
@@ -266,8 +287,19 @@ padding:70px 20px;
 <body>
 
 <header>
+<div class="nav">
+
 <div class="logo">
 RESTORAN <span>CAR</span>
+</div>
+
+<nav>
+<a href="#o-nama">O NAMA</a>
+<a href="#galerija">GALERIJA</a>
+<a href="#meni">MENI</a>
+<a href="#kontakt">KONTAKT</a>
+</nav>
+
 </div>
 </header>
 
@@ -275,17 +307,11 @@ RESTORAN <span>CAR</span>
 
 <div class="hero-content">
 
-<div class="welcome">
-DOBRODOŠLI
-</div>
+<div class="welcome">DOBRODOŠLI</div>
 
-<h1>
-RESTORAN <span>CAR</span>
-</h1>
+<h1>RESTORAN <span>CAR</span></h1>
 
-<p class="hero-text">
-Ukus dostojan cara.
-</p>
+<p>Ukus dostojan cara.</p>
 
 <div class="rating">
 <div class="stars">★★★★★</div>
@@ -295,25 +321,18 @@ Ukus dostojan cara.
 </div>
 
 <div class="buttons">
-
-<a class="btn gold" href="#meni">
-POGLEDAJ MENI
-</a>
-
-<a class="btn outline" href="tel:0616363600">
-POZOVI NAS
-</a>
-
+<a class="btn gold" href="#meni">POGLEDAJ MENI</a>
+<a class="btn outline" href="tel:0616363600">POZOVI NAS</a>
 </div>
 
 </div>
 
 </section>
 
-<section>
+<section id="o-nama">
 
 <div class="title">
-<small>O NAMA</small>
+<small>NAŠA PRIČA</small>
 <h2>Restoran Car</h2>
 </div>
 
@@ -351,6 +370,25 @@ i specijalitetima pripremljenim sa pažnjom.
 
 </section>
 
+<section id="galerija">
+
+<div class="title">
+<small>POGLEDAJTE NAS</small>
+<h2>Galerija</h2>
+</div>
+
+<div class="gallery">
+
+<img src="IMG_0375.jpeg" alt="Restoran Car">
+<img src="IMG_0376.jpeg" alt="Restoran Car">
+<img src="IMG_0378.jpeg" alt="Restoran Car">
+<img src="IMG_0379.jpeg" alt="Restoran Car">
+<img src="IMG_0380.jpeg" alt="Restoran Car">
+
+</div>
+
+</section>
+
 <section id="meni">
 
 <div class="title">
@@ -362,7 +400,7 @@ i specijalitetima pripremljenim sa pažnjom.
 
 <div class="menu-card">
 <h3>🥩 Roštilj</h3>
-<p>Ukusni specijaliteti sa roštilja.</p>
+<p>Specijaliteti sa roštilja.</p>
 </div>
 
 <div class="menu-card">
@@ -382,7 +420,7 @@ i specijalitetima pripremljenim sa pažnjom.
 
 <div class="menu-card">
 <h3>👑 Specijaliteti kuće</h3>
-<p>Probajte naše posebne specijalitete.</p>
+<p>Probajte specijalitete Restorana Car.</p>
 </div>
 
 <div class="menu-card">
@@ -394,7 +432,7 @@ i specijalitetima pripremljenim sa pažnjom.
 
 </section>
 
-<section class="contact-section">
+<section class="contact-section" id="kontakt">
 
 <div class="contact">
 
@@ -408,27 +446,19 @@ i specijalitetima pripremljenim sa pažnjom.
 <div class="contact-box">
 <div class="icon">📍</div>
 <h3>Adresa</h3>
-<p>
-Vojvode Mišića 20<br>
-Odžaci
-</p>
+<p>Vojvode Mišića 20<br>Odžaci</p>
 </div>
 
 <div class="contact-box">
 <div class="icon">📞</div>
 <h3>Telefon</h3>
-<a href="tel:0616363600">
-061 636 3600
-</a>
+<a href="tel:0616363600">061 636 3600</a>
 </div>
 
 <div class="contact-box">
 <div class="icon">⭐</div>
 <h3>Ocena</h3>
-<p>
-4,9 / 5<br>
-323 recenzije
-</p>
+<p>4,9 / 5<br>323 recenzije</p>
 </div>
 
 </div>
